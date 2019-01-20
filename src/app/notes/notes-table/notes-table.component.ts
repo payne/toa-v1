@@ -7,6 +7,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { MatTableDataSource, MatSort, MatDialog } from '@angular/material';
 
 import { NotesService } from '../notes.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'notes-table',
@@ -15,19 +16,21 @@ import { NotesService } from '../notes.service';
 })
 export class NotesTableComponent implements AfterViewInit {
 
-  displayedColumns = ['name', 'age', 'email', 'phrase', 'edit'];
+  displayedColumns = ['name', 'age', 'email', 'content', 'edit'];
   dataSource: MatTableDataSource<any>;
+  notes: Observable<any[]>;
 
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private afs: AngularFirestore, public dialog: MatDialog, private notesService: NotesService) { }
+  constructor(public dialog: MatDialog, private notesService: NotesService) { }
 
 
   ngAfterViewInit() {
-    this.afs.collection<any>('hackers').valueChanges().subscribe(data => {
+    this.notes = this.notesService.getData();
+    this.notes.subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.sort = this.sort;
-    })
+    });
   }
 
   applyFilter(filterValue: string) {
