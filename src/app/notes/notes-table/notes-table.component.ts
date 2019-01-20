@@ -8,11 +8,11 @@ import { MatTableDataSource, MatSort, MatDialog } from '@angular/material';
 
 
 @Component({
-  selector: 'data-table',
-  templateUrl: './data-table.component.html',
-  styleUrls: ['./data-table.component.scss']
+  selector: 'notes-table',
+  templateUrl: './notes-table.component.html',
+  styleUrls: ['./notes-table.component.scss']
 })
-export class DataTableComponent implements AfterViewInit {
+export class NotesTableComponent implements AfterViewInit {
 
   displayedColumns = ['name', 'age', 'email', 'phrase', 'edit'];
   dataSource: MatTableDataSource<any>; 
