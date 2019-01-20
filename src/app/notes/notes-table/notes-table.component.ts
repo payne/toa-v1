@@ -6,6 +6,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { MatTableDataSource, MatSort, MatDialog } from '@angular/material';
 
+import { NotesService } from '../notes.service';
 
 @Component({
   selector: 'notes-table',
@@ -15,11 +16,11 @@ import { MatTableDataSource, MatSort, MatDialog } from '@angular/material';
 export class NotesTableComponent implements AfterViewInit {
 
   displayedColumns = ['name', 'age', 'email', 'phrase', 'edit'];
-  dataSource: MatTableDataSource<any>; 
+  dataSource: MatTableDataSource<any>;
 
   @ViewChild(MatSort) sort: MatSort;
-  
-  constructor(private afs: AngularFirestore, public dialog: MatDialog) { }
+
+  constructor(private afs: AngularFirestore, public dialog: MatDialog, private notesService: NotesService) { }
 
 
   ngAfterViewInit() {
@@ -30,7 +31,7 @@ export class NotesTableComponent implements AfterViewInit {
   }
 
   applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); 
+    filterValue = filterValue.trim();
     filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
   }
