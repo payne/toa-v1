@@ -11,7 +11,6 @@ import { environment } from '../environments/environment';
 
 // Firestarter App Modules
 import { CoreModule } from './core/core.module';
-import { UploadsModule } from './uploads/uploads.module';
 import { UiModule } from './ui/ui.module';
 import { NotesModule } from './notes/notes.module';
 
@@ -34,7 +33,6 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
     CoreModule,
     UiModule,
     NotesModule,
-    UploadsModule,
     AngularFireModule.initializeApp(environment.firebase, 'firestarter'),
     AngularFirestoreModule,
     AngularFireAuthModule,
@@ -46,4 +44,4 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

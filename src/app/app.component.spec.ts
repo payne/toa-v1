@@ -2,7 +2,6 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { UploadsModule } from './uploads/uploads.module';
 import { UiModule } from './ui/ui.module';
 import { NotesModule } from './notes/notes.module';
 import { AngularFireModule } from '@angular/fire/';
@@ -17,7 +16,6 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         CoreModule,
-        UploadsModule,
         UiModule,
         NotesModule,
         AngularFireModule.initializeApp(environment.firebase, 'firestarter'),
