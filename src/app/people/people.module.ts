@@ -32,4 +32,4 @@ import {
   // declarations: [NotesListComponent, NoteDetailComponent, NotesTableComponent, ProfileComponent],
   // providers: [NotesService]
 })
-export class NotesModule { }
+export class PeopleModule { }
