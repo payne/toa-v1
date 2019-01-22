@@ -13,6 +13,7 @@ import { environment } from '../environments/environment';
 import { CoreModule } from './core/core.module';
 import { UiModule } from './ui/ui.module';
 import { NotesModule } from './notes/notes.module';
+import { PeopleModule } from './people/people.module';
 
 // @angular/fire/ Modules
 import { AngularFireModule } from '@angular/fire';
@@ -33,6 +34,7 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
     CoreModule,
     UiModule,
     NotesModule,
+    PeopleModule,
     AngularFireModule.initializeApp(environment.firebase, 'firestarter'),
     AngularFirestoreModule,
     AngularFireAuthModule,
