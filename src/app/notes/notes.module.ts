@@ -19,7 +19,6 @@ import { NotesListComponent } from './notes-list/notes-list.component';
 import { NoteDetailComponent } from './note-detail/note-detail.component';
 import { NotesService } from './notes.service';
 import { NotesTableComponent } from './notes-table/notes-table.component';
-import { ProfileComponent } from '../profile/profile.component';
 
 @NgModule({
   imports: [
@@ -34,7 +33,7 @@ import { ProfileComponent } from '../profile/profile.component';
     MatDialogModule,
     MatButtonModule,
   ],
-  declarations: [NotesListComponent, NoteDetailComponent, NotesTableComponent, ProfileComponent],
+  declarations: [NotesListComponent, NoteDetailComponent, NotesTableComponent],
   providers: [NotesService]
 })
 export class NotesModule { }
