@@ -14,7 +14,7 @@ import {
   MatDialogModule,
   MatButtonModule
 } from '@angular/material';
-import { PersonInformationComponent } from '../person-information/person-information.component';
+import { PersonInformationComponent } from './person-information/person-information.component';
 
 
 @NgModule({
@@ -31,7 +31,6 @@ import { PersonInformationComponent } from '../person-information/person-informa
     MatButtonModule,
   ],
   declarations: [PersonInformationComponent],
-  // declarations: [NotesListComponent, NoteDetailComponent, NotesTableComponent, ProfileComponent],
   // providers: [NotesService]
 })
 export class PeopleModule { }
