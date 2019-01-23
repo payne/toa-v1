@@ -7,12 +7,12 @@ import { Person } from './person';
 
 @Injectable()
 export class PeopleService {
-
+  collectionName='people';
   peopleCollection: AngularFirestoreCollection<any>;
   peopleDocument: AngularFirestoreDocument<any>;
 
   constructor(private afs: AngularFirestore) {
-    this.peopleCollection = this.afs.collection('people', (ref) => ref.orderBy('time', 'desc').limit(5));
+    this.peopleCollection = this.afs.collection(this.collectionName, (ref) => ref.orderBy('lastName').limit(5));
   }
 
   getData(): Observable<Person[]> {
@@ -32,7 +32,7 @@ export class PeopleService {
   }
 
   getPerson(id: string) {
-    return this.afs.doc<Person>(`people/${id}`);
+    return this.afs.doc<Person>(`${this.collectionName}/${id}`);
   }
 
   createPerson(person: Person) {
