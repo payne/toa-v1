@@ -14,6 +14,7 @@ import {
   MatButtonModule
 } from '@angular/material';
 import { PersonInformationComponent } from './person-information/person-information.component';
+import { PeopleService } from './people.service';
 
 
 @NgModule({
@@ -30,6 +31,6 @@ import { PersonInformationComponent } from './person-information/person-informat
     MatButtonModule,
   ],
   declarations: [PersonInformationComponent],
-  // providers: [NotesService]
+  providers: [PeopleService]
 })
 export class PeopleModule { }

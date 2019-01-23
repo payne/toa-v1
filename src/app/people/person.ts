@@ -1,9 +1,13 @@
 export class Person {
   id: number;
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   comments: string;
-  constructor(name: string, email: string, comments: string) {
-    this.name = name; this.email = email; this.comments = comments;
+  // TODO(MGP): Use map or something fancy for named parameters and/or default values
+  constructor(firstName: string, lastName='Smith', email='email@email.com', comments='Default comment, please edit') {
+    this.firstName = firstName; 
+    this.lastName = lastName; 
+    this.email = email; this.comments = comments;
   }
 }

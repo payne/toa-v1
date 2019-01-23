@@ -30,8 +30,7 @@ export class PeopleService {
     return this.afs.doc<Person>(`person/${id}`);
   }
 
-  createPerson(name: string, email: string, comments: string) {
-    const person = new Person(name, email, comments);
-    return this.peopleCollection.add(person);
+  createPerson(person: Person) {
+    return this.peopleCollection.add({...person});
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl } from "@angular/forms";
 import { Person } from "../person";
+import { PeopleService } from "../people.service";
 
 @Component({
   selector: "person-information",
@@ -19,7 +20,7 @@ export class PersonInformationComponent implements OnInit {
       description= new FormControl();
       tags= new FormControl();
 
-  constructor() {}
+  constructor(private peopleService: PeopleService) {}
 
   ngOnInit(): void {
     this.personInformationForm = new FormGroup({
@@ -34,6 +35,8 @@ export class PersonInformationComponent implements OnInit {
     });
   }
   save() {
+    this.person = new Person(this.firstName.value);
+    this.peopleService.createPerson(this.person);
     console.log(`save firstName=${this.firstName.value}`);
   }
 }
