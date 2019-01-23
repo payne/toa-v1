@@ -1,7 +1,27 @@
 
 <form (ngSubmit)="save()" [formGroup]="personInformationForm">
+  <div>
   <span>
   <label for="firstNameId">First Name:</label><input id="firstNameId" type="text" formControlName="firstName"/>
+  <label for="lastNameId">Last Name:</label><input id="lastNameId" type="text" formControlName="lastName"/>
   </span>
+  </div>
+  <div>
+  <span>
+  <label for="emailId">eMail:</label><input id="lastNameId" type="text" formControlName="email"/>
+  <label for="twitterId">Twitter:</label><input id="twitterId" type="text" formControlName="twitter"/>
+  </span></div>
+  <div>
+    <span>
+      <label for="descriptionId">Description:</label><input id="descriptionId" type="text" formControlName="description"/>
+    </span>
+  </div>
+  <div>
+    <span>
+      <label for="tagsId">Tags:</label><input id="tagsId" type="text" formControlName="tags"/>
+    </span>
+  </div>
+  <div>
   <input type="submit" value="go"/>
+  </div>
 </form>

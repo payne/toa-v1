@@ -35,7 +35,7 @@ export class PersonInformationComponent implements OnInit {
     });
   }
   save() {
-    this.person = new Person(this.firstName.value);
+    this.person = new Person(this.firstName.value,this.lastName.value,this.email.value,this.description.value,this.tags.value);
     this.peopleService.createPerson(this.person);
     console.log(`save firstName=${this.firstName.value}`);
   }
