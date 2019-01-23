@@ -1,3 +1,7 @@
-<p>
-  <input [(ngModel)]="name">
-</p>
+
+<form (ngSubmit)="save()" [formGroup]="personInformationForm">
+  <span>
+  <label for="firstNameId">First Name:</label><input id="firstNameId" type="text" formControlName="firstName"/>
+  </span>
+  <input type="submit" value="go"/>
+</form>
