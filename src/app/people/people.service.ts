@@ -16,18 +16,23 @@ export class PeopleService {
   }
 
   getData(): Observable<Person[]> {
-    return this.peopleCollection.snapshotChanges().pipe(
+    console.log(`in getData()`)
+    const stuff= this.peopleCollection.snapshotChanges().pipe(
       map((actions) => {
         return actions.map((a) => {
           const data = a.payload.doc.data();
+          console.log(data);
           return { id: a.payload.doc.id, ...data };
         });
       })
     );
+    console.log(`getData() returns=${stuff}`);
+    console.log(stuff);
+    return stuff;
   }
 
   getPerson(id: string) {
-    return this.afs.doc<Person>(`person/${id}`);
+    return this.afs.doc<Person>(`people/${id}`);
   }
 
   createPerson(person: Person) {
