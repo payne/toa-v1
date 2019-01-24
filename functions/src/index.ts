@@ -1,4 +1,5 @@
 import * as functions from 'firebase-functions';
+const nodemailer = require('nodemailer');
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
